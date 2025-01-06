@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <title>Salary Calculator</title>
-</head>
+ </head>
+
 <body>
+
   <header>
     <h1>Salary Calculator</h1>
-  </header>
+ </header>
 
-  <main>
-    <h2>Add Employee</h2>
-    <form class="employee-form" onsubmit="submitForm(event)">
-      <input id="first-input" placeholder="First Name" data-testid="firstNameInput">
-      <input id="last-input" placeholder="Last Name" data-testid="lastNameInput">
-      <input id="id-input" placeholder="ID" data-testid="idInput">
-      <input id="title-input" placeholder="Title" data-testid="titleInput">
-      <input id="salary-input" placeholder="Annual Salary" data-testid="annualSalaryInput">
-</form>
+<main>
+    <h2 id="add-emp-htwo">Add Employee</h2>
 
+    <div id="form-div">
+     <form onsubmit="submitForm(event)">
+      <input id="first-input" type="text" placeholder="First Name" data-testid="firstNameInput">
+      <input id="last-input" type="text" placeholder="Last Name" data-testid="lastNameInput">
+      <input id="id-input" type="number" placeholder="ID Number" data-testid="idInput">
+      <input id="title-input" type="text" placeholder="Title" data-testid="titleInput">
+      <input id="salary-input" type="number" placeholder="Annual Salary" data-testid="annualSalaryInput">
+    </form>
+   </div>
 
-    <h2>Employees</h2>
-    <table id="employee-info">
-<thead>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>ID Number</th>
-    <th>Title</th>
-    <th>Annual Salary</th>
-</tr>
-</thead>
+    <div id="submit-button-div">
+     <button onclick="submitForm(event)" data-testid="submitButton">Submit</button>
+   </div>
 
-<tbody id="employee-data">
+    <h2 id="current-employees">Employees</h2>
+     
+    <table class="employee-info-table">
+      <thead>
+        <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>ID Number</th>
+         <th>Title</th>
+         <th>Annual Salary</th>
+       </tr>
+     </thead>
 
-</tbody>
+     <div class="table-body-div">
+      <tbody>
+      </tbody>
+    </div>
+
 </table>
-
-
-    <button onclick="submitForm(event)" data-testid="submitButton">
-      Submit
-    </button>
     
-  </main>
-  <footer>
-    <p>Total Monthly</p>
-  </footer>
+</main>
+
+  
+    <footer class="over-budget">
+      <p>Total Monthly</p>
+   </footer>
+ 
+
   <!--source in js file-->
   <script src="script.js"></script>
 </body>

@@ -2,7 +2,7 @@ console.log('Hello world!');
 
 function submitForm(event) {
     console.log('submit form');
-    //salaryTotal(event);
+    salaryTotal(event);
 
 //stop page from refreshing
     event.preventDefault();
@@ -41,7 +41,7 @@ function deleteButton(event) {
         parentRow.remove();
 };
 
-
+//function to reset input fields after submit
 function inputReset() {
   document.querySelector('#first-input').value = '';
   document.querySelector('#last-input').value = '';
@@ -50,13 +50,20 @@ function inputReset() {
   document.querySelector('#salary-input').value = '';
 };
 
-
+//function to add salaries when added 
 let total = 0;
-
 
 function salaryTotal(event) {
 let sal = +document.querySelector('#salary-input').value;
-total += sal
+total += sal;
+console.log('salary total', total);
+
+updateSalFooter();
 };
 
-//still need function to remove text in imput fields after submit
+//function to change sal total number
+function updateSalFooter() {
+let salFooter = document.querySelector('#sal-total-div');
+salFooter.innerHTML +=`
+<p>${total}</p> `
+};

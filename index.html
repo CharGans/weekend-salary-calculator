@@ -16,7 +16,7 @@
     <h2 id="add-emp-htwo">Add Employee</h2>
 
     <div id="form-div">
-     <form onsubmit="submitForm(event)">
+     <form onsubmit="submitForm(event)" id="form">
       <input id="first-input" type="text" placeholder="First Name" data-testid="firstNameInput">
       <input id="last-input" type="text" placeholder="Last Name" data-testid="lastNameInput">
       <input id="id-input" type="number" placeholder="ID Number" data-testid="idInput">
@@ -43,7 +43,7 @@
      </thead>
 
      <div class="table-body-div">
-      <tbody>
+      <tbody id="employee-data">
       </tbody>
     </div>
 
@@ -52,7 +52,7 @@
 </main>
 
   
-    <footer class="over-budget">
+    <footer>
       <p>Total Monthly</p>
    </footer>
  

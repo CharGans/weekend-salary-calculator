@@ -11,10 +11,12 @@ main {
 }
 
 header {
-text-align: center;
-background-color: darkslategray;
-color:rgb(168, 199, 199);
-padding: 10px 30px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 25px;
+    text-align: center;
+    background-color: darkslategray;
+    color:rgb(168, 199, 199);
+    padding: 10px 30px;
 
 }
 
@@ -35,7 +37,7 @@ padding: 10px 30px;
 }
 
 #footer-id {
-    text-align: center;
+text-align: center;
 }
 
 .over-budget{
@@ -44,13 +46,18 @@ padding: 10px 30px;
 
 #form-div {
    text-align: center;
+   border: 2px solid rgb(159, 157, 157);
+   border-radius: 10px;
+   padding: 5px;
+   margin-left: 50px;
+   margin-right: 50px;
 }
 
 #submit-button-div {
 text-align: center;
 }
 
-.table-body-div {
-    background-color: rgb(124, 149, 149);
+table, th, td {
+    border: 2px solid rgb(159, 157, 157);
     border-collapse: collapse;
 }

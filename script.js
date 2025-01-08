@@ -79,12 +79,14 @@ for (let i = 0; i < table.rows.length; i++) {
 
 //Function changes footer text color when 'Over Budget'
 function setFooterColor() {
-  let footer = document.getElementById('#footer-id');
-  let maxMonthly = 20000
+  let footer = document.getElementById('footer-id');
+  let maxMonthly = 20000;
   let footerTotal = salaryTotal(employeeTable, [4]);
 
       if (footerTotal > maxMonthly) {
-      footer.className += 'over-budget';
+      footer.className = 'over-budget';
+  } else {
+    footer.className = '';
   };
   console.log('Total Monthly', footerTotal);
 };

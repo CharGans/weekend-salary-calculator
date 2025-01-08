@@ -18,7 +18,7 @@ function submitForm(event) {
   let titleVal = document.querySelector('#title-input').value;
   let salaryVal = document.querySelector('#salary-input').value;
 
-//remove tr
+//Delete button variable (removes <tr>)
   let delButtn = `<button onclick="deleteButton(event)">Remove</button>`;
 
 employeeTable.innerHTML += `
@@ -38,6 +38,10 @@ inputReset();
 //adds new salary to total
 let totalSalary = salaryTotal(employeeTable, [4]);
 updateSalFooter(totalSalary);
+
+//sum < 20,000 check
+setFooterColor();
+
 };
 
 //delete button
@@ -64,23 +68,26 @@ for (let i = 0; i < table.rows.length; i++) {
   let cell = table.rows[i].cells[columnIndex];
   let value = +cell.textContent;
   sum += value
-}
-console.log('Current Sum', sum);
-return sum;
+    };
+  return sum;
 };
 
-function updateSalFooter(total) {
-document.querySelector('#sal-total-p').innerHTML = `${total}`;
+//function updates footer when form submitted
+  function updateSalFooter(total) {
+    document.querySelector('#sal-total-p').innerHTML = `${total}`;
 };
 
+//Function changes footer text color when 'Over Budget'
+function setFooterColor() {
+  let footer = document.getElementById('#footer-id');
+  let maxMonthly = 20000
+  let footerTotal = salaryTotal(employeeTable, [4]);
 
-
-
-//let sal = +document.querySelector('#salary-input').value;
-//total += sal;
-//console.log('salary total', total);
-
-//updateSalFooter();
+      if (footerTotal > maxMonthly) {
+      footer.className += 'over-budget';
+  };
+  console.log('Total Monthly', footerTotal);
+};
 
 
 //function to change sal total number

@@ -34,12 +34,12 @@ padding: 10px 30px;
     margin-right: auto;
 }
 
-footer {
+#footer-id {
     text-align: center;
 }
 
 .over-budget{
-    text-align: center;
+    color: crimson;
 }
 
 #form-div {

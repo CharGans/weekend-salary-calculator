@@ -69,7 +69,7 @@ for (let i = 0; i < table.rows.length; i++) {
   let value = +cell.textContent;
   sum += value
     };
-  return sum;
+  return sum/12;
 };
 
 //function updates footer when form submitted
